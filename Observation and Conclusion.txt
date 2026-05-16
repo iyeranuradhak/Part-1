@@ -1,0 +1,40 @@
+Observation
+•	No missing values are present in the dataset. 
+________________________________________
+6. Basic Statistical Summary
+Since the dataset contains categorical and text data, use:
+print(df.describe(include='all'))
+Expected Insights
+•	Total number of samples 
+•	Number of unique classes 
+•	Most frequent class 
+•	Frequency counts 
+________________________________________
+7. Distribution of Target Variable
+print(df["class"].value_counts())
+Output
+Class	Count
+normal	120
+scratch	120
+dent	120
+stain	120
+Observation
+•	The dataset is perfectly balanced. 
+•	Each class contains 120 images. 
+________________________________________
+8. Visualizing Target Distribution
+plt.figure(figsize=(8,5))
+
+sns.countplot(x=df["class"])
+
+plt.title("Distribution of Target Classes")
+plt.xlabel("Class")
+plt.ylabel("Count")
+
+plt.show()
+This graph shows that all classes are equally distributed.
+________________________________________
+9. Conclusion for Dataset Understanding
+
+The dataset contains 480 labeled image records with two columns: image filename and class label. The target variable consists of four equally distributed classes: normal, scratch, dent, and stain. No missing values were found in the dataset, making it clean and suitable for preprocessing and neural network training. Since the dataset is balanced, model bias toward a particular class is less likely during training.
+
